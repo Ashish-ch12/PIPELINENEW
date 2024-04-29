@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	parameters {
-		choice(name: 'ENVIRONMENT', choices: ['QA','UAT'], description: 'Pick Environment value')
+		choice(name: 'ENV', choices: ['QA','UAT'], description: 'Pick Environment value')
 	}
 	stages {
 	    stage('Checkout') {
@@ -17,11 +17,11 @@ pipeline {
 		stage('Deployment'){
 		    steps {
 			script {
-			 if ( env.ENVIRONMENT == 'QA' ){
+			 if ( env.ENV == 'QA' ){
         	sh 'cp target/PIPELINE.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
         	echo "deployment has been done on QA!"
 			 }
-			else ( env.ENVIRONMENT == 'UAT' ){
+			else ( env.ENV == 'UAT' ){
     		sh 'cp target/PIPELINE.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
     		echo "deployment has been done on UAT!"
 			}
