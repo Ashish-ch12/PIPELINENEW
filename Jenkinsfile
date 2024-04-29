@@ -21,7 +21,7 @@ pipeline {
         	sh 'cp target/PIPELINENEW.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
         	echo "deployment has been done on QA!"
 			 }
-			else ( env.ENV == 'UAT' ){
+			else if ( env.ENV == 'UAT' ){
     		sh 'cp target/PIPELINENEW.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
     		echo "deployment has been done on UAT!"
 			}
