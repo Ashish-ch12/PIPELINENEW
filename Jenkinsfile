@@ -14,4 +14,4 @@ pipeline {
 		   steps {
 		sh 'cp target/PIPELINENEW.war /home/ashish/Documents/mavenfile/apache-tomcat-9.0.88/webapps'
 			}}	
-}
+}}
