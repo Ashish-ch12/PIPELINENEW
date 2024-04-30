@@ -26,6 +26,6 @@ pipeline {
     		echo "deployment has been done on UAT!"
 			}
 			echo "deployment has been done!"
-			
+			slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'devops-slack', color: 'good', message: 'welcome to jenkins', teamDomain: 'ashish'
 			}}}	
 }}
